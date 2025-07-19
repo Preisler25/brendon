@@ -40,6 +40,7 @@ export class TicketsService {
         weekend_price: createTicketDto.weekend_price,
         weekday_price: createTicketDto.weekday_price,
         deposit: createTicketDto.deposit,
+        importance: createTicketDto.importance,
         rental_id: createTicketDto.rental_id,
       })
       .returning()
@@ -107,6 +108,9 @@ export class TicketsService {
     if (updateTicketDto.deposit) {
       ticket[0].deposit = updateTicketDto.deposit;
     }
+    if (updateTicketDto.importance) {
+      ticket[0].importance = updateTicketDto.importance;
+    }
     if (updateTicketDto.rental_id) {
       ticket[0].rental_id = updateTicketDto.rental_id;
     }
@@ -117,6 +121,7 @@ export class TicketsService {
         weekend_price: ticket[0].weekend_price,
         weekday_price: ticket[0].weekday_price,
         deposit: ticket[0].deposit,
+        importance: ticket[0].importance,
         rental_id: ticket[0].rental_id,
       })
       .where(eq(Tickets.id, id))
