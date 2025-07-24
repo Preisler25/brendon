@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { RentalsService } from './rentals.service';
 import { CreateRentalDto } from './dto/create-rental.dto';
 import { UpdateRentalDto } from './dto/update-rental.dto';
@@ -9,7 +17,15 @@ export class RentalsController {
 
   @Post()
   create(@Body() createRentalDto: CreateRentalDto) {
-    return this.rentalsService.create(createRentalDto);
+    try {
+      return this.rentalsService.create(createRentalDto);
+    } catch (e) {
+      return {
+        status: 500,
+        message: 'Internal Server Error',
+        data: [],
+      };
+    }
   }
 
   @Get()

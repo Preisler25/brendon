@@ -17,7 +17,15 @@ export class TicketsController {
 
   @Post()
   create(@Body() createTicketDto: CreateTicketDto) {
-    return this.ticketsService.create(createTicketDto);
+    try {
+      return this.ticketsService.create(createTicketDto);
+    } catch (error) {
+      return {
+        status: 500,
+        message: 'Internal Server Error',
+        data: [],
+      };
+    }
   }
 
   @Get()

@@ -1,6 +1,6 @@
 {
-  "id": "4717bd93-4cfb-467f-8829-d13392a06c87",
-  "prevId": "e87a8be7-d8ab-4c24-acc9-2ae19b5ddd33",
+  "id": "65834b48-3fe8-4174-b74a-b1765bed28b6",
+  "prevId": "4717bd93-4cfb-467f-8829-d13392a06c87",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -46,7 +46,8 @@
           "name": "importance",
           "type": "integer",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": 0
         },
         "rental_id": {
           "name": "rental_id",
@@ -78,13 +79,6 @@
           "nullsNotDistinct": false,
           "columns": [
             "name"
-          ]
-        },
-        "tickets_importance_unique": {
-          "name": "tickets_importance_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "importance"
           ]
         }
       },

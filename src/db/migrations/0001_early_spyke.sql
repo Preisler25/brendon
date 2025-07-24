@@ -1,0 +1,1 @@
+ALTER TABLE "ticket_logs" ADD COLUMN "payed_in_cash" boolean DEFAULT false NOT NULL;

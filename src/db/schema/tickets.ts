@@ -8,8 +8,6 @@ export const Tickets = pgTable('tickets', {
   weekend_price: integer().notNull().default(0),
   weekday_price: integer().notNull().default(0),
   deposit: integer().notNull().default(0),
-  importance: integer().notNull().unique(),
-  rental_id: uuid()
-    .references(() => Rentals.id)
-    .notNull(),
+  importance: integer().notNull().default(0),
+  rental_id: uuid().references(() => Rentals.id),
 });

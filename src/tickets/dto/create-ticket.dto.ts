@@ -4,5 +4,5 @@ export class CreateTicketDto {
   readonly weekday_price: number;
   readonly deposit: number;
   readonly importance: number;
-  readonly rental_id: string;
+  readonly rental_id?: string;
 }

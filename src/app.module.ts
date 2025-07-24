@@ -5,9 +5,11 @@ import { DbModule } from './db/db.module';
 import { DbService } from './db/db.service';
 import { RentalsModule } from './rentals/rentals.module';
 import { TicketsModule } from './tickets/tickets.module';
+import { AuthModule } from './auth/auth.module';
+import { PurchaseModule } from './purchase/purchase.module';
 
 @Module({
-  imports: [DbModule, RentalsModule, TicketsModule],
+  imports: [DbModule, RentalsModule, TicketsModule, AuthModule, PurchaseModule],
   controllers: [AppController],
   providers: [AppService, DbService],
 })
